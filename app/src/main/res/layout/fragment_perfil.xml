@@ -30,17 +30,37 @@
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="16dp"/>
 
-            <!-- Icono de usuario -->
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/baseline_car_repair_24"
-                app:tint="@color/white"
-                android:layout_marginBottom="32dp"/>
+            <!-- Foto de perfil con opción de cambiar -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="8dp">
 
-            <!-- Card con la información del usuario -->
+                <ImageView
+                    android:id="@+id/img_profile_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_person"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_change_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cambiar foto"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="12dp"/>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,79 +75,23 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <!-- Nombre de la empresa -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nombre de la Empresa"
+                        android:text="Nombre Completo"
                         android:textSize="14sp"
                         android:textColor="@color/plumb"
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/tv_nombre_empresa"
+                        android:id="@+id/tv_nombre_completo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Empresa S.A.C."
+                        android:text="Juan Pérez García"
                         android:textSize="18sp"
                         android:textColor="@color/black"
                         android:layout_marginBottom="16dp"/>
 
-                    <!-- RUC -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="RUC"
-                        android:textSize="14sp"
-                        android:textColor="@color/plumb"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/tv_ruc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20123456789"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="16dp"/>
-
-                    <!-- Dirección -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dirección"
-                        android:textSize="14sp"
-                        android:textColor="@color/plumb"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/tv_direccion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Av. Principal 123, Lima"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="16dp"/>
-
-                    <!-- Teléfono -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Teléfono"
-                        android:textSize="14sp"
-                        android:textColor="@color/plumb"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/tv_telefono"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="987654321"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="16dp"/>
-
-                    <!-- Email -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -140,14 +104,173 @@
                         android:id="@+id/tv_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="empresa@correo.com"
+                        android:text="juan.perez@correo.com"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teléfono"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_telefono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+51 987 654 321"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="País de Origen"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_pais"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Perú"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Miembro desde"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_fecha_registro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diciembre 2024"
                         android:textSize="18sp"
                         android:textColor="@color/black"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Botón Editar Perfil (opcional) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mis Estadísticas"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_lugares_visitados"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/fondo_principal"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lugares"
+                                android:textSize="12sp"
+                                android:textColor="@color/plumb"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_fotos_tomadas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/fondo_principal"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fotos"
+                                android:textSize="12sp"
+                                android:textColor="@color/plumb"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tv_audios_grabados"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/fondo_principal"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Audios"
+                                android:textSize="12sp"
+                                android:textColor="@color/plumb"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_editar_perfil"
                 android:layout_width="match_parent"
@@ -160,7 +283,6 @@
                 app:iconTint="@color/black"
                 android:layout_marginBottom="12dp"/>
 
-            <!-- Botón Cerrar Sesión -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cerrar_sesion"
                 android:layout_width="match_parent"
@@ -171,7 +293,6 @@
                 app:cornerRadius="10dp"
                 app:icon="@android:drawable/ic_lock_power_off"
                 app:iconTint="@color/white"/>
-
         </LinearLayout>
     </ScrollView>
 
