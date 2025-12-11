@@ -7,4 +7,37 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="white_transparent">#3FFAF8F8</color>
+
+    <color name="fondoface">#c9cdd0</color>
+    <color name="bluetext">#0078f6</color>
+    <color name="plumb">#f6f7f9</color>
+    <color name="red">#FEFD1F1F</color>
+    <color name="purple">#FE5B0CD0</color>
+    <color name="green">#034203</color>
+
+
+
+    <color name="fondo_principal">#FF018786</color> <!-- Fondo oscuro general -->
+    <color name="fondo_tarjeta">#11161D</color> <!-- Tarjetas y bloques -->
+    <color name="fondo_boton_activo">#1A2028</color> <!-- Botón Día/Semana/Mes activo -->
+    <color name="fondo_boton_inactivo">#0E141B</color> <!-- Botón inactivo -->
+
+    <!-- Texto -->
+    <color name="texto_principal">#FFFFFF</color> <!-- Texto blanco -->
+    <color name="texto_secundario">#8C9AAE</color> <!-- Texto gris azulado -->
+    <color name="texto_desactivado">#5C6A7E</color> <!-- Texto deshabilitado -->
+
+    <!-- Valores financieros -->
+    <color name="verde_exito">#10C060</color> <!-- +10% ingresos -->
+    <color name="rojo_error">#E34545</color> <!-- -5% gastos -->
+
+    <!-- Extras -->
+    <color name="icono_activo">#00D0C6</color> <!-- Icono menú activo -->
+    <color name="icono_inactivo">#6C7A89</color> <!-- Iconos menú inactivos -->
+    <color name="borde_divisor">#1F2833</color> <!-- Separadores suaves -->
+
+
 </resources>

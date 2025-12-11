@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_principal"
+    android:padding="16dp"
+    tools:context="PerfilFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mi Perfil"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Icono de usuario -->
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/baseline_car_repair_24"
+                app:tint="@color/white"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Card con la información del usuario -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Nombre de la empresa -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre de la Empresa"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_nombre_empresa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Empresa S.A.C."
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- RUC -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RUC"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_ruc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20123456789"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Dirección -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dirección"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_direccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Av. Principal 123, Lima"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Teléfono -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teléfono"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_telefono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="987654321"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Email -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textSize="14sp"
+                        android:textColor="@color/plumb"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="empresa@correo.com"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botón Editar Perfil (opcional) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_editar_perfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EDITAR PERFIL"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="10dp"
+                app:icon="@android:drawable/ic_menu_edit"
+                app:iconTint="@color/black"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Botón Cerrar Sesión -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cerrar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CERRAR SESIÓN"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/holo_red_dark"
+                app:cornerRadius="10dp"
+                app:icon="@android:drawable/ic_lock_power_off"
+                app:iconTint="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
