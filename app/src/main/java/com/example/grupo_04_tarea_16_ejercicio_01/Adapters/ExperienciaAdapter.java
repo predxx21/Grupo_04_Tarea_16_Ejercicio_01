@@ -60,7 +60,7 @@ public class ExperienciaAdapter extends ArrayAdapter<Experiencia> {
         // Mostramos Coordenadas o Descripción
         String coordenadas = "📍 " + experiencia.getLatitud() + ", " + experiencia.getLongitud();
 
-        // Juntamos todo en la segunda línea
+        // Juntamos to_do en la segunda línea
         text2.setText(estadoInfo + "\n" + experiencia.getDescripcion());
 
         return convertView;
