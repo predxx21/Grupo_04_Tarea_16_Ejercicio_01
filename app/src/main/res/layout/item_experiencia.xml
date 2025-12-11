@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardExperiencia"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:strokeWidth="2dp"
+    app:strokeColor="#E0E0E0"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"> <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardImageContainer"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imgFotoMini"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:scaleType="centerCrop"
+            android:background="#EEEEEE"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/txtTituloItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        tools:text="Mirador de Huacho"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toEndOf="@id/cardImageContainer"
+        app:layout_constraintTop_toTopOf="@id/cardImageContainer"
+        app:layout_constraintEnd_toStartOf="@id/imgSyncStatus"/>
+
+    <LinearLayout
+        android:id="@+id/containerFecha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/txtTituloItem"
+        app:layout_constraintTop_toBottomOf="@id/txtTituloItem"
+        app:layout_constraintEnd_toStartOf="@id/imgSyncStatus">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@android:drawable/ic_menu_today"
+            app:tint="#757575"/>
+
+        <TextView
+            android:id="@+id/txtFechaItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="12 Dic, 2025"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtUbicacionShort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Lat: -11.1, Lon: -77.6"
+        android:textSize="12sp"
+        android:textColor="@color/bluetext"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintStart_toStartOf="@id/txtTituloItem"
+        app:layout_constraintTop_toBottomOf="@id/containerFecha"
+        app:layout_constraintEnd_toStartOf="@id/imgSyncStatus"/>
+
+
+    <ImageView
+        android:id="@+id/imgSyncStatus"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/stat_notify_sync"
+        app:tint="#BDBDBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

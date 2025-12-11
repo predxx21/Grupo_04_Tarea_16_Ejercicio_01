@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.grupo_04_tarea_16_ejercicio_01.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_historial"
+        android:name="com.example.grupo_04_tarea_16_ejercicio_01.ui.historial.HistorialFragment"
+        android:label="@string/menu_historial"
+        tools:layout="@layout/fragment_historial" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.grupo_04_tarea_16_ejercicio_01.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_captura"
+        android:name="com.example.grupo_04_tarea_16_ejercicio_01.ui.captura.CapturaFragment"
+        android:label="@string/menu_captura"
+        tools:layout="@layout/fragment_captura" />
 </navigation>
