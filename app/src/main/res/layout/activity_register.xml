@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="RegisterActivity"
+    android:background="@color/fondo_principal"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de Empresa"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="16dp"/>
+
+            <ImageView
+                android:id="@+id/img_registro"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_car_repair_24"
+                app:tint="@color/white"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Nombre de la empresa -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de la empresa:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_name_company_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el nombre de la empresa"
+                android:textColorHint="@color/plumb"
+                android:inputType="text"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- RUC -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RUC:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_ruc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el RUC"
+                android:textColorHint="@color/plumb"
+                android:inputType="number"
+                android:maxLength="11"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Dirección -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirección:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese la dirección"
+                android:textColorHint="@color/plumb"
+                android:inputType="textPostalAddress"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Teléfono -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfono:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese el teléfono"
+                android:textColorHint="@color/plumb"
+                android:inputType="phone"
+                android:maxLength="9"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="correo@empresa.com"
+                android:textColorHint="@color/plumb"
+                android:inputType="textEmailAddress"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Contraseña -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contraseña:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_password_registro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mínimo 6 dígitos"
+                android:textColorHint="@color/plumb"
+                android:inputType="numberPassword"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Confirmar Contraseña -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmar contraseña:"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/et_password_confirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Repita la contraseña"
+                android:textColorHint="@color/plumb"
+                android:inputType="numberPassword"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_transparent"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Botón Registrar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_registrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTRAR"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Botón Volver -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_volver_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VOLVER AL LOGIN"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/transparent"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
