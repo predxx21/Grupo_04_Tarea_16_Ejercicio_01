@@ -30,10 +30,26 @@ public class HistorialFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         List<Experiencia> listaFalsa = new ArrayList<>();
-        listaFalsa.add(new Experiencia("Plaza de Armas", "Muy bonito", "10/12/2025", true));
-        listaFalsa.add(new Experiencia("Mirador Grau", "Vista increíble", "11/12/2025", false));
-        listaFalsa.add(new Experiencia("Iglesia Huaura", "Antigua", "11/12/2025", true));
+        Experiencia exp1 = new Experiencia();
+        exp1.setTitulo("Plaza de Armas");
+        exp1.setDescripcion("Muy bonito centro histórico");
+        exp1.setSincronizado(1);
+        exp1.setFotoPath("");
+        listaFalsa.add(exp1);
 
+        Experiencia exp2 = new Experiencia();
+        exp2.setTitulo("Mirador Grau");
+        exp2.setDescripcion("Vista increíble al mar");
+        exp2.setSincronizado(0);
+        exp2.setFotoPath("");
+        listaFalsa.add(exp2);
+
+        Experiencia exp3 = new Experiencia();
+        exp3.setTitulo("Iglesia Huaura");
+        exp3.setDescripcion("Balcón histórico");
+        exp3.setSincronizado(1);
+        exp3.setFotoPath("");
+        listaFalsa.add(exp3);
         adapter = new ExperienciaAdapter(listaFalsa);
         recyclerView.setAdapter(adapter);
 

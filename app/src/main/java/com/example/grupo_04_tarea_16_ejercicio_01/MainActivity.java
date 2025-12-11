@@ -1,9 +1,13 @@
 package com.example.grupo_04_tarea_16_ejercicio_01;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.grupo_04_tarea_16_ejercicio_01.ui.Login.LoginActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -39,15 +43,62 @@ public class MainActivity extends AppCompatActivity {
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
+
+        /** LOGIN */
+        // 1. Recuperar el email que mandó el Login
+        String userEmail = getIntent().getStringExtra("email");
+        if (userEmail == null) userEmail = "Invitado"; // Por si entran directo
+        // 2. Obtener acceso a la cabecera (Header) del menú lateral
+        // El header es el archivo nav_header_main.xml
+        View headerView = navigationView.getHeaderView(0);
+
+        // 3. Buscar los TextViews dentro del Header
+        TextView navSubtitle = headerView.findViewById(R.id.textView); // Usualmente es el subtitulo/correo
+        // TextView navTitle = headerView.findViewById(R.id.textViewName); // El nombre
+
+        // 4. Setear el texto
+        navSubtitle.setText(userEmail);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_captura, R.id.nav_historial, R.id.nav_perfil)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            // Si el usuario tocó "Cerrar Sesión"
+            if (id == R.id.nav_logout) {
+                logout();
+                return true;
+            }
+
+            boolean handled = NavigationUI.onNavDestinationSelected(item, navController);
+            if (handled) {
+                drawer.closeDrawers();
+            }
+            return handled;
+        });
+
+
+    }
+
+    private void logout() {
+        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("is_logged_in", false); // Marcar como no logueado
+        editor.apply();
+
+        // Volver al Login
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish(); // Matar la MainActivity para que no puedan volver atrás
     }
 
     @Override

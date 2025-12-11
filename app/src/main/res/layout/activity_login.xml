@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Login.LoginActivity"
+    android:background="@drawable/fondo_autos"
+    android:padding="16dp">
+
+   <TextView
+       android:id="@+id/title_login"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Experiencia de Viaje"
+       android:textStyle="bold"
+       android:textSize="24sp"
+       android:textColor="@color/white"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_marginTop="40dp" />
+
+   <ImageView
+       android:id="@+id/img_login"
+       android:layout_width="180dp"
+       android:layout_height="180dp"
+       android:src="@drawable/ic_car"
+       app:tint="@color/white"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/title_login"
+       app:layout_constraintBottom_toTopOf="@id/main_login"
+       android:layout_marginTop="20dp" />
+
+   <LinearLayout
+       android:id="@+id/main_login"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/img_login"
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_marginTop="30dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Email:"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          android:layout_marginBottom="8dp" />
+
+      <EditText
+          android:id="@+id/et_email"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="ejemplo@correo.com"
+          android:textColorHint="@color/plumb"
+          android:inputType="textEmailAddress"
+          android:paddingVertical="14dp"
+          android:paddingHorizontal="16dp"
+          android:textColor="@color/white"
+          android:background="@drawable/rounded_transparent"
+          android:layout_marginBottom="16dp" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Contraseña:"
+          android:textColor="@color/white"
+          android:textSize="16sp"
+          android:layout_marginBottom="8dp" />
+
+      <EditText
+          android:id="@+id/et_password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Digite su contraseña"
+          android:textColorHint="@color/plumb"
+          android:inputType="textPassword"
+          android:paddingVertical="14dp"
+          android:paddingHorizontal="16dp"
+          android:textColor="@color/white"
+          android:background="@drawable/rounded_transparent"
+          android:layout_marginBottom="24dp" />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/btn_login"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="INICIAR SESIÓN"
+          android:textColor="@color/black"
+          android:textStyle="bold"
+          android:backgroundTint="@color/white"
+          app:cornerRadius="10dp"
+          android:paddingVertical="12dp"
+          android:layout_marginBottom="12dp" />
+
+      <TextView
+          android:id="@+id/tv_register"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="¿No tienes cuenta? Regístrate"
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          android:layout_gravity="center"
+          android:paddingVertical="8dp" />
+
+   </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

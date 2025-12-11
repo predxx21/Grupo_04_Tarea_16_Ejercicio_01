@@ -34,7 +34,6 @@ public class ExperienciaAdapter extends RecyclerView.Adapter<ExperienciaAdapter.
         Experiencia item = listaExperiencias.get(position);
 
         holder.txtTitulo.setText(item.getTitulo());
-        holder.txtFecha.setText(item.getFecha());
 
         if (item.isSincronizado()) {
             holder.imgSync.setImageResource(android.R.drawable.checkbox_on_background);
@@ -52,13 +51,12 @@ public class ExperienciaAdapter extends RecyclerView.Adapter<ExperienciaAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTitulo, txtFecha;
+        TextView txtTitulo;
         ImageView imgFoto, imgSync;
 
         public ViewHolder(View itemView) {
             super(itemView);
             txtTitulo = itemView.findViewById(R.id.txtTituloItem);
-            txtFecha = itemView.findViewById(R.id.txtFechaItem);
             imgFoto = itemView.findViewById(R.id.imgFotoMini);
             imgSync = itemView.findViewById(R.id.imgSyncStatus);
         }
