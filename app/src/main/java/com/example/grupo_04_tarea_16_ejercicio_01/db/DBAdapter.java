@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 
 import com.example.grupo_04_tarea_16_ejercicio_01.model.Experiencia;
 import com.example.grupo_04_tarea_16_ejercicio_01.model.Usuario;
@@ -174,4 +176,61 @@ public class DBAdapter {
         values.put(COL_EXP_SYNC, nuevoEstado);
         db.update(TABLE_EXPERIENCIAS, values, COL_EXP_ID + "=?", new String[]{String.valueOf(idExperiencia)});
     }
+
+    public Usuario getUsuarioPorId(int id) {
+        Usuario usuario = null;
+        Cursor cursor = db.query(TABLE_USUARIOS, null,
+                COL_USER_ID + "=?",
+                new String[]{String.valueOf(id)}, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            usuario = new Usuario();
+            usuario.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_USER_ID)));
+            usuario.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_NOMBRE)));
+            usuario.setCorreo(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_CORREO)));
+            usuario.setGrupo(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_GRUPO)));
+            // No obtenemos la contraseña por seguridad
+            cursor.close();
+        }
+        return usuario;
+    }
+
+    // Actualizar usuario
+    public boolean actualizarUsuario(Usuario usuario) {
+        ContentValues values = new ContentValues();
+        values.put(COL_USER_NOMBRE, usuario.getNombre());
+        values.put(COL_USER_CORREO, usuario.getCorreo());
+        values.put(COL_USER_GRUPO, usuario.getGrupo());
+
+        // Solo actualizar contraseña si no está vacía
+        if (usuario.getPassword() != null && !usuario.getPassword().isEmpty()) {
+            values.put(COL_USER_PASSWORD, usuario.getPassword());
+        }
+
+        String whereClause = COL_USER_ID + "=?";
+        String[] whereArgs = {String.valueOf(usuario.getId())};
+
+        int rowsAffected = db.update(TABLE_USUARIOS, values, whereClause, whereArgs);
+        return rowsAffected > 0;
+    }
+
+    // Obtener usuario por email (para PerfilFragment)
+    public Usuario getUsuarioPorEmail(String email) {
+        Usuario usuario = null;
+        Cursor cursor = db.query(TABLE_USUARIOS, null,
+                COL_USER_CORREO + "=?",
+                new String[]{email}, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            usuario = new Usuario();
+            usuario.setId(cursor.getInt(cursor.getColumnIndexOrThrow(COL_USER_ID)));
+            usuario.setNombre(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_NOMBRE)));
+            usuario.setCorreo(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_CORREO)));
+            usuario.setGrupo(cursor.getString(cursor.getColumnIndexOrThrow(COL_USER_GRUPO)));
+            cursor.close();
+        }
+        return usuario;
+    }
+
+
 }

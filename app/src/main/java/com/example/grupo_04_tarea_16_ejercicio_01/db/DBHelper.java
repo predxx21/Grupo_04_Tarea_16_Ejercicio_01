@@ -2,6 +2,7 @@ package com.example.grupo_04_tarea_16_ejercicio_01.db;
 
 import android.content.Context;
 
+
 import com.example.grupo_04_tarea_16_ejercicio_01.model.Experiencia;
 import com.example.grupo_04_tarea_16_ejercicio_01.model.Usuario;
 
@@ -55,5 +56,22 @@ public class DBHelper {
         dbAdapter.open();
         dbAdapter.cambiarEstadoSync(idExperiencia, nuevoEstado);
         dbAdapter.close();
+    }
+
+    public Usuario Obtener_Usuario_Por_Id(int id) {
+        dbAdapter.open();
+        // Necesitarás implementar este método en DBAdapter
+        Usuario usuario = dbAdapter.getUsuarioPorId(id);
+        dbAdapter.close();
+        return usuario;
+    }
+
+    // Método para actualizar usuario
+    public boolean Actualizar_Usuario(Usuario usuario) {
+        dbAdapter.open();
+        // Necesitarás implementar este método en DBAdapter
+        boolean success = dbAdapter.actualizarUsuario(usuario);
+        dbAdapter.close();
+        return success;
     }
 }
